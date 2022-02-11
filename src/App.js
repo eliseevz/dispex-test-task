@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from "react"
+import MainPage from "./pages/mainPage";
+import {useDispatch} from "react-redux";
+import {loadStreetsList} from "./store/streets";
+import ModalClientProvider from "./hooks/useModalClient";
+
 
 function App() {
+
+    const dispatch = useDispatch()
+
+    const fetchStreets = (params) => {
+        dispatch(loadStreetsList())
+    }
+
+    useEffect(() => {
+        fetchStreets()
+    }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ModalClientProvider>
+          <div className="App container">
+              <MainPage/>
+          </div>
+      </ModalClientProvider>
   );
 }
 

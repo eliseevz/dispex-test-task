@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.dropdownItem {
+  background: #fff;
+  height: 40px;
+  border-bottom: 1px solid #f3f3f3;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.input {
+  width: 300px;
+  border: 1px solid black;
+  outline: none;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.card {
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transition: 0.3s ease;
+  border-color: #000;
+}
+
+.modall {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background: rgba(255, 255, 255, .6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modall.active {
+  display: flex;
+  opacity: 1;
+  z-index: 555;
+  transition: 0.5s ease;
+}
+
+.modalForm {
+  padding: 50px;
+  width: 600px;
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #c7c7c7;
+}
